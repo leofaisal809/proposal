@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Itim&family=Sacramento&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(300, 20%, 55%);
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  background-color: hsl(263, 100%, 75%);
+}
+
+#svg {
+  display: none;
+}
+
+.prompt__container {
+  margin: 1em;
+  padding: 2em;
+  position: absolute;
+  /* background-color: rgba(255, 255, 255, 0.3); */
+  background-color: hsla(263, 100%, 40%, 0.2);
+}
+
+.prompt__title {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-size: clamp(1.75rem, 5vw, 3rem);
+  font-family: "Sacramento", cursive;
+}
+
+.prompt__buttons {
+  gap: 1.5em;
+  width: 100%;
+  display: grid;
+  margin-top: 1em;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr;
+}
+
+.prompt__buttons div {
+  display: flex;
+}
+
+.prompt__success {
+  justify-content: end;
+}
+
+.prompt__failure {
+  justify-content: start;
+}
+
+.prompt__success button,
+.prompt__failure button {
+  outline: none;
+  color: black;
+  cursor: pointer;
+  border: 2px solid;
+  position: relative;
+  padding: 0.4em 1em;
+  font-family: "Itim", cursive;
+  transition: all ease-in-out 300ms;
+  font-size: clamp(0.75rem, 3vw, 1.2rem);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.prompt__success button {
+  background-color: hsl(299, 34%, 70%);
+  border-color: hsl(288, 46%, 63%) !important;
+}
+
+.prompt__failure button {
+  color: white;
+  background-color: hsl(299, 37%, 48%);
+  border-color: hsl(304, 31%, 52%) !important;
+}
+
+.prompt__success button:hover {
+  background-color: hsl(299, 30%, 52%);
+}
+
+.prompt__failure button:hover {
+  background-color: hsl(286, 25%, 50%);
+}
